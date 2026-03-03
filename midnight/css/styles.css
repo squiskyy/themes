@@ -1,0 +1,199 @@
+/* Midnight Theme - Celestial Night */
+
+:root {
+  --midnight-dark: #0a0e1a;
+  --midnight-blue: #0f1629;
+  --midnight-light: #1a2542;
+  --star-white: #f0f4ff;
+  --gold-accent: #ffd700;
+  --gold-glow: #ffec8b;
+  --deep-space: #050810;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, var(--deep-space) 0%, var(--midnight-dark) 50%, var(--midnight-blue) 100%);
+  color: var(--star-white);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated Starfield Background */
+.stars, .twinkling {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.stars {
+  background: transparent;
+  z-index: 0;
+}
+
+.twinkling {
+  background: transparent;
+  z-index: 1;
+  opacity: 0.6;
+  animation: twinkle 8s ease-in-out infinite;
+}
+
+/* Aurora Effect */
+.aurora {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(100, 149, 237, 0.15) 0%,
+    transparent 60%
+  );
+  animation: aurora 20s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Container */
+.container {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+/* Typography */
+.title {
+  font-size: 5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--star-white) 0%, var(--gold-accent) 50%, var(--star-white) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+  margin-bottom: 20px;
+  letter-spacing: 8px;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: rgba(240, 244, 255, 0.7);
+  font-weight: 300;
+  letter-spacing: 4px;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
+
+.content {
+  background: rgba(15, 22, 41, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 0 60px rgba(100, 149, 237, 0.05);
+}
+
+.content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(240, 244, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn {
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 10px;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-accent) 0%, var(--gold-glow) 100%);
+  color: var(--midnight-dark);
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+}
+
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.6);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold-accent);
+  border: 2px solid var(--gold-accent);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 215, 0, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+}
+
+/* Animations */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes aurora {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 20px rgba(255, 215, 0, 0.2); }
+  to { text-shadow: 0 0 40px rgba(255, 215, 0, 0.5), 0 0 60px rgba(255, 215, 0, 0.3); }
+}
+
+/* Floating particles */
+.particle {
+  position: absolute;
+  background: var(--gold-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 15s infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title { font-size: 3rem; }
+  .subtitle { font-size: 1rem; }
+  .container { padding: 60px 20px; }
+}
