@@ -9,32 +9,33 @@
 <body>
   <div class="stars"></div>
   <div class="twinkling"></div>
-  <div class="aurora"></div>
 
   <!-- Navigation -->
   <nav class="navbar">
-    <div class="navbar-brand">Midnight</div>
-    <ul class="navbar-menu">
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="#">Components</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+    <div class="container navbar-content">
+      <div class="navbar-brand">Midnight</div>
+      <ul class="navbar-menu">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#forms">Forms</a></li>
+      </ul>
+    </div>
   </nav>
 
   <main class="container">
     <!-- Hero Section -->
     <section class="hero">
-      <h1>Midnight Theme</h1>
-      <p class="lead">A celestial night-inspired theme with golden accents and immersive effects</p>
+      <h1>Midnight</h1>
+      <p class="lead">A refined dark theme with subtle golden accents</p>
       <div class="hero-buttons">
-        <button class="btn btn-primary btn-lg">Get Started</button>
-        <button class="btn btn-outline btn-lg">Learn More</button>
+        <button class="btn btn-primary">Get Started</button>
+        <button class="btn btn-outline">Documentation</button>
       </div>
     </section>
 
     <!-- Color Palette -->
-    <section class="showcase-section">
+    <section class="showcase-section" id="components">
       <h2>Color Palette</h2>
       <div class="color-swatches">
         <div class="swatch" style="background: var(--midnight-dark);">
@@ -50,36 +51,36 @@
           <code>#1a2542</code>
         </div>
         <div class="swatch" style="background: var(--gold-accent);">
-          <span>Gold Accent</span>
-          <code>#ffd700</code>
+          <span>Gold</span>
+          <code>#c9a962</code>
         </div>
         <div class="swatch" style="background: var(--star-white);">
           <span>Star White</span>
-          <code>#f0f4ff</code>
+          <code>#e8ecf1</code>
         </div>
       </div>
     </section>
 
     <!-- Typography -->
-    <section class="showcase-section">
+    <section class="showcase-section" id="typography">
       <h2>Typography</h2>
       <div class="typography-demo">
-        <h1>Heading 1 - Celestial Dreams</h1>
-        <h2>Heading 2 - Where Stars Meet</h2>
-        <h3>Heading 3 - Golden Horizons</h3>
-        <h4>Heading 4 - Night Whispers</h4>
-        <h5>Heading 5 - Moonlit Paths</h5>
-        <h6>Heading 6 - Star Dust</h6>
+        <h1>Heading 1 — The Quick Fox</h1>
+        <h2>Heading 2 — Jumps Over</h2>
+        <h3>Heading 3 — The Lazy Dog</h3>
+        <h4>Heading 4 — Night Sky</h4>
+        <h5>Heading 5 — Golden Hour</h5>
+        <h6>Heading 6 — Starlight</h6>
         
-        <p class="mt-4">This is a standard paragraph. The midnight theme brings the beauty of the night sky to your web presence with deep blues, golden accents, and subtle animations that create an immersive celestial experience.</p>
+        <p class="mt-4">This is standard body text. The midnight theme provides a refined, professional appearance with careful attention to typography, spacing, and visual hierarchy. Every element is designed to work together harmoniously.</p>
         
-        <p class="lead">This is a lead paragraph. It stands out and draws attention to important content.</p>
+        <p class="lead">Lead text draws attention to important information without overwhelming the design.</p>
         
-        <p><strong>Bold text</strong> for emphasis, <em>italic text</em> for style, and <u>underlined text</u> for highlights.</p>
+        <p><strong>Bold text</strong> for emphasis, <em>italic text</em> for nuance, and <u>underlined text</u> for highlights.</p>
         
         <blockquote>
-          "The night sky is a canvas of infinite possibilities, where every star tells a story."
-          <footer>— Celestial Wisdom</footer>
+          Design is not just what it looks like. Design is how it works.
+          <footer>— Steve Jobs</footer>
         </blockquote>
       </div>
     </section>
@@ -88,107 +89,84 @@
     <section class="showcase-section">
       <h2>Buttons</h2>
       <div class="component-demo">
-        <h3>Primary Buttons</h3>
+        <h3>Primary</h3>
         <div class="button-group">
-          <button class="btn btn-primary">Primary</button>
+          <button class="btn btn-primary">Default</button>
           <button class="btn btn-primary btn-sm">Small</button>
           <button class="btn btn-primary btn-lg">Large</button>
           <button class="btn btn-primary" disabled>Disabled</button>
         </div>
 
-        <h3 class="mt-4">Gold Accent Buttons</h3>
+        <h3 class="mt-4">Gold</h3>
         <div class="button-group">
-          <button class="btn btn-gold">Gold</button>
+          <button class="btn btn-gold">Default</button>
           <button class="btn btn-gold btn-sm">Small</button>
           <button class="btn btn-gold btn-lg">Large</button>
           <button class="btn btn-gold" disabled>Disabled</button>
         </div>
 
-        <h3 class="mt-4">Outline Buttons</h3>
+        <h3 class="mt-4">Outline</h3>
         <div class="button-group">
-          <button class="btn btn-outline">Outline</button>
+          <button class="btn btn-outline">Default</button>
           <button class="btn btn-outline btn-sm">Small</button>
           <button class="btn btn-outline btn-lg">Large</button>
-          <button class="btn btn-outline" disabled>Disabled</button>
         </div>
 
         <h3 class="mt-4">Button Group</h3>
         <div class="btn-group">
-          <button class="btn btn-primary">Left</button>
-          <button class="btn btn-primary">Middle</button>
-          <button class="btn btn-primary">Right</button>
+          <button class="btn btn-primary">One</button>
+          <button class="btn btn-primary">Two</button>
+          <button class="btn btn-primary">Three</button>
         </div>
       </div>
     </section>
 
     <!-- Forms -->
-    <section class="showcase-section">
+    <section class="showcase-section" id="forms">
       <h2>Forms</h2>
       <div class="form-demo">
         <form>
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" class="form-control" placeholder="Enter your name">
+              <label for="name">Name</label>
+              <input type="text" id="name" class="form-control" placeholder="John Doe">
             </div>
             <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" class="form-control" placeholder="name@example.com">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-control" placeholder="john@example.com">
             </div>
           </div>
 
           <div class="form-group">
             <label for="subject">Subject</label>
-            <input type="text" id="subject" class="form-control" placeholder="What's this about?">
+            <input type="text" id="subject" class="form-control" placeholder="How can we help?">
           </div>
 
           <div class="form-group">
             <label for="category">Category</label>
             <select id="category" class="form-control">
-              <option>Select a category</option>
+              <option>Select an option</option>
               <option>General Inquiry</option>
               <option>Support</option>
               <option>Feedback</option>
-              <option>Partnership</option>
             </select>
           </div>
 
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" class="form-control" rows="5" placeholder="Your message here..."></textarea>
+            <textarea id="message" class="form-control" rows="4" placeholder="Your message..."></textarea>
           </div>
 
           <div class="form-group">
             <label class="checkbox-label">
               <input type="checkbox" checked>
               <span class="checkmark"></span>
-              Subscribe to newsletter
+              Subscribe to updates
             </label>
-          </div>
-
-          <div class="form-group">
-            <label class="radio-label">
-              <input type="radio" name="contact" checked>
-              <span class="radiomark"></span>
-              Email me
-            </label>
-            <label class="radio-label">
-              <input type="radio" name="contact">
-              <span class="radiomark"></span>
-              Call me
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label>Input with Icon</label>
-            <div class="input-group">
-              <span class="input-icon">🔍</span>
-              <input type="text" class="form-control" placeholder="Search...">
-            </div>
           </div>
 
           <div class="form-actions">
-            <button type="submit" class="btn btn-gold">Submit</button>
+            <button type="submit" class="btn btn-gold">Send Message</button>
             <button type="reset" class="btn btn-outline">Reset</button>
           </div>
         </form>
@@ -199,16 +177,16 @@
     <section class="showcase-section">
       <h2>Alerts</h2>
       <div class="alert alert-success">
-        <strong>Success!</strong> Your changes have been saved successfully.
+        <strong>Success</strong> Your changes have been saved.
       </div>
       <div class="alert alert-info">
-        <strong>Info!</strong> There's a new update available for download.
+        <strong>Info</strong> A new update is available.
       </div>
       <div class="alert alert-warning">
-        <strong>Warning!</strong> Please review your settings before proceeding.
+        <strong>Warning</strong> Please review before continuing.
       </div>
       <div class="alert alert-error">
-        <strong>Error!</strong> Something went wrong. Please try again.
+        <strong>Error</strong> Something went wrong.
       </div>
     </section>
 
@@ -220,25 +198,25 @@
           <div class="card-header">Featured</div>
           <div class="card-body">
             <h3>Card Title</h3>
-            <p>This is a featured card with a header. Cards are great for displaying related content in an organized way.</p>
-            <button class="btn btn-primary btn-sm">Action</button>
+            <p>Clean card design with subtle borders and hover effects.</p>
+            <button class="btn btn-primary btn-sm">Learn More</button>
           </div>
         </div>
 
         <div class="card">
           <div class="card-body">
-            <h3>Basic Card</h3>
-            <p>A simple card without header or footer. Perfect for quick content blocks.</p>
+            <h3>Simple Card</h3>
+            <p>A minimal card for displaying content blocks.</p>
           </div>
         </div>
 
         <div class="card">
           <div class="card-body">
-            <h3>Card with Footer</h3>
-            <p>This card has a footer for additional information or actions.</p>
+            <h3>With Footer</h3>
+            <p>Includes a footer for metadata or actions.</p>
           </div>
           <div class="card-footer">
-            <small>Last updated 3 mins ago</small>
+            Updated 2 hours ago
           </div>
         </div>
       </div>
@@ -251,47 +229,42 @@
         <table class="table">
           <thead>
             <tr>
-              <th>#</th>
-              <th>Star Name</th>
-              <th>Constellation</th>
-              <th>Distance (ly)</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Distance</th>
               <th>Magnitude</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
               <td>Sirius</td>
-              <td>Canis Major</td>
-              <td>8.6</td>
-              <td>-1.46</td>
+              <td>Main Sequence</td>
+              <td>8.6 ly</td>
+              <td>−1.46</td>
             </tr>
             <tr>
-              <td>2</td>
               <td>Canopus</td>
-              <td>Carina</td>
-              <td>310</td>
-              <td>-0.74</td>
+              <td>Supergiant</td>
+              <td>310 ly</td>
+              <td>−0.74</td>
             </tr>
             <tr>
-              <td>3</td>
               <td>Arcturus</td>
-              <td>Boötes</td>
-              <td>37</td>
-              <td>-0.05</td>
+              <td>Red Giant</td>
+              <td>37 ly</td>
+              <td>−0.05</td>
             </tr>
             <tr>
-              <td>4</td>
               <td>Vega</td>
-              <td>Lyra</td>
-              <td>25</td>
+              <td>Main Sequence</td>
+              <td>25 ly</td>
               <td>0.03</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h3 class="mt-4">Striped Table</h3>
+      <h3 class="mt-4">Striped</h3>
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
@@ -341,10 +314,10 @@
         <span class="badge badge-error">Error</span>
       </div>
 
-      <h3 class="mt-4">Progress Bars</h3>
+      <h3 class="mt-4">Progress</h3>
       <div class="progress-group">
         <div class="progress-label">
-          <span>Stardust Collection</span>
+          <span>Completion</span>
           <span>75%</span>
         </div>
         <div class="progress">
@@ -354,21 +327,11 @@
 
       <div class="progress-group">
         <div class="progress-label">
-          <span>Moon Phases</span>
+          <span>Upload</span>
           <span>50%</span>
         </div>
         <div class="progress">
           <div class="progress-bar progress-gold" style="width: 50%"></div>
-        </div>
-      </div>
-
-      <div class="progress-group">
-        <div class="progress-label">
-          <span>Aurora Activity</span>
-          <span>90%</span>
-        </div>
-        <div class="progress">
-          <div class="progress-bar progress-success" style="width: 90%"></div>
         </div>
       </div>
     </section>
@@ -397,28 +360,8 @@
       <h3 class="mt-4">Tabs</h3>
       <div class="tabs">
         <button class="tab active">Overview</button>
-        <button class="tab">Features</button>
-        <button class="tab">Documentation</button>
-        <button class="tab">Support</button>
-      </div>
-    </section>
-
-    <!-- Utilities -->
-    <section class="showcase-section">
-      <h2>Utilities</h2>
-      
-      <h3>Shadows</h3>
-      <div class="shadow-demo">
-        <div class="shadow-box shadow-sm">Small Shadow</div>
-        <div class="shadow-box shadow-md">Medium Shadow</div>
-        <div class="shadow-box shadow-lg">Large Shadow</div>
-        <div class="shadow-box shadow-glow">Gold Glow</div>
-      </div>
-
-      <h3 class="mt-4">Spacing</h3>
-      <div class="spacing-demo">
-        <div class="spacer">Margin Example</div>
-        <div class="spacer">Padding Example</div>
+        <button class="tab">Specs</button>
+        <button class="tab">Docs</button>
       </div>
     </section>
 
@@ -438,8 +381,7 @@
         <button class="modal-close" onclick="toggleModal()">&times;</button>
       </div>
       <div class="modal-body">
-        <p>This is a modal dialog. It can contain any content you need - forms, text, images, or other components.</p>
-        <p>The midnight theme makes it look like a floating portal in the night sky.</p>
+        <p>A clean modal dialog for user interactions.</p>
       </div>
       <div class="modal-footer">
         <button class="btn btn-outline" onclick="toggleModal()">Cancel</button>
@@ -450,7 +392,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Midnight Theme. Built with stardust and dreams.</p>
+      <p>&copy; 2026 Midnight Theme</p>
     </div>
   </footer>
 

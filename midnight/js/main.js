@@ -1,20 +1,20 @@
-// Midnight Theme - Interactive Components
+// Midnight Theme — Minimal & Professional
 
 document.addEventListener('DOMContentLoaded', () => {
   createStars();
-  createParticles();
   initTabs();
   initSmoothScroll();
+  initForms();
 });
 
 /**
- * Create animated starfield background
+ * Create subtle starfield background
  */
 function createStars() {
   const starsContainer = document.querySelector('.stars');
   if (!starsContainer) return;
   
-  const starCount = 200;
+  const starCount = 100;
 
   for (let i = 0; i < starCount; i++) {
     const star = document.createElement('div');
@@ -22,9 +22,9 @@ function createStars() {
     
     const x = Math.random() * 100;
     const y = Math.random() * 100;
-    const size = Math.random() * 2 + 1;
+    const size = Math.random() * 1.5 + 0.5;
     const delay = Math.random() * 5;
-    const duration = Math.random() * 3 + 2;
+    const duration = Math.random() * 5 + 5;
 
     star.style.cssText = `
       position: absolute;
@@ -32,57 +32,14 @@ function createStars() {
       top: ${y}%;
       width: ${size}px;
       height: ${size}px;
-      background: white;
+      background: rgba(232, 236, 241, 0.6);
       border-radius: 50%;
-      opacity: ${Math.random() * 0.8 + 0.2};
       animation: twinkle ${duration}s ease-in-out infinite;
       animation-delay: ${delay}s;
     `;
 
     starsContainer.appendChild(star);
   }
-}
-
-/**
- * Create floating gold particles
- */
-function createParticles() {
-  const particleCount = 15;
-  
-  // Initial particles
-  for (let i = 0; i < particleCount; i++) {
-    setTimeout(() => {
-      createParticle();
-    }, i * 1000);
-  }
-
-  // Continuously create new particles
-  setInterval(() => {
-    createParticle();
-  }, 2000);
-}
-
-function createParticle() {
-  const particle = document.createElement('div');
-  particle.className = 'particle';
-  
-  const size = Math.random() * 4 + 2;
-  const left = Math.random() * 100;
-  
-  particle.style.cssText = `
-    width: ${size}px;
-    height: ${size}px;
-    left: ${left}%;
-    bottom: -10px;
-    opacity: ${Math.random() * 0.5 + 0.3};
-  `;
-
-  document.body.appendChild(particle);
-
-  // Remove particle after animation
-  setTimeout(() => {
-    particle.remove();
-  }, 15000);
 }
 
 /**
@@ -94,29 +51,10 @@ function initTabs() {
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      // Remove active class from all tabs
       tabs.forEach(t => t.classList.remove('active'));
-      // Add active class to clicked tab
       tab.classList.add('active');
     });
   });
-}
-
-/**
- * Modal toggle function (global scope for onclick handlers)
- */
-function toggleModal() {
-  const modal = document.getElementById('demoModal');
-  if (!modal) return;
-  
-  modal.classList.toggle('active');
-  
-  // Prevent body scroll when modal is open
-  if (modal.classList.contains('active')) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
-  }
 }
 
 /**
@@ -141,100 +79,37 @@ function initSmoothScroll() {
 }
 
 /**
- * Form validation enhancement
+ * Form handling
  */
-const forms = document.querySelectorAll('form');
-forms.forEach(form => {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Visual feedback for demo
-    const submitBtn = form.querySelector('button[type="submit"]');
-    if (submitBtn) {
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Submitting...';
-      submitBtn.disabled = true;
+function initForms() {
+  const forms = document.querySelectorAll('form');
+  forms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
       
-      setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
         
-        // Show success alert
-        showAlert('Form submitted successfully!', 'success');
-        form.reset();
-      }, 1500);
-    }
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          form.reset();
+        }, 1500);
+      }
+    });
   });
-});
-
-/**
- * Show alert message
- */
-function showAlert(message, type = 'info') {
-  const alert = document.createElement('div');
-  alert.className = `alert alert-${type}`;
-  alert.innerHTML = `<strong>${type.charAt(0).toUpperCase() + type.slice(1)}!</strong> ${message}`;
-  alert.style.position = 'fixed';
-  alert.style.top = '20px';
-  alert.style.right = '20px';
-  alert.style.zIndex = '2000';
-  alert.style.minWidth = '300px';
-  alert.style.animation = 'modalSlide 0.3s ease';
-  
-  document.body.appendChild(alert);
-  
-  setTimeout(() => {
-    alert.style.opacity = '0';
-    alert.style.transition = 'opacity 0.3s ease';
-    setTimeout(() => alert.remove(), 300);
-  }, 3000);
 }
 
 /**
- * Button ripple effect (optional enhancement)
+ * Modal toggle
  */
-const buttons = document.querySelectorAll('.btn');
-buttons.forEach(button => {
-  button.addEventListener('click', function(e) {
-    // Skip if button is disabled
-    if (this.disabled) return;
-    
-    const rect = this.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    const ripple = document.createElement('span');
-    ripple.style.cssText = `
-      position: absolute;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      transform: scale(0);
-      animation: ripple 0.6s linear;
-      pointer-events: none;
-      left: ${x}px;
-      top: ${y}px;
-      width: 100px;
-      height: 100px;
-      margin-left: -50px;
-      margin-top: -50px;
-    `;
-    
-    this.style.position = 'relative';
-    this.style.overflow = 'hidden';
-    this.appendChild(ripple);
-    
-    setTimeout(() => ripple.remove(), 600);
-  });
-});
-
-// Add ripple keyframes dynamically
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes ripple {
-    to {
-      transform: scale(4);
-      opacity: 0;
-    }
-  }
-`;
-document.head.appendChild(style);
+function toggleModal() {
+  const modal = document.getElementById('demoModal');
+  if (!modal) return;
+  
+  modal.classList.toggle('active');
+  document.body.style.overflow = modal.classList.contains('active') ? 'hidden' : '';
+}
