@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlantis Admin Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">🌊 Atlantis</div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active">
+        <span class="nav-icon">📊</span>
+        <span>Dashboard</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">📈</span>
+        <span>Analytics</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">👥</span>
+        <span>Users</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">📦</span>
+        <span>Products</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🛒</span>
+        <span>Orders</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">💬</span>
+        <span>Messages</span>
+        <span class="badge">3</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">⚙️</span>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-profile">
+        <div class="avatar">JD</div>
+        <div class="user-info">
+          <div class="user-name">John Doe</div>
+          <div class="user-role">Administrator</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle">☰</button>
+        <h1 class="page-title">Dashboard</h1>
+      </div>
+      <div class="topbar-right">
+        <div class="search-box">
+          <input type="text" placeholder="Search...">
+          <span class="search-icon">🔍</span>
+        </div>
+        <button class="icon-btn">🔔</button>
+        <button class="icon-btn">⚙️</button>
+      </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-content">
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon" style="background: rgba(56, 189, 248, 0.1);">
+            <span>👁️</span>
+          </div>
+          <div class="stat-info">
+            <div class="stat-label">Total Views</div>
+            <div class="stat-value">128,430</div>
+            <div class="stat-change positive">↑ 12.5%</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: rgba(168, 85, 247, 0.1);">
+            <span>💰</span>
+          </div>
+          <div class="stat-info">
+            <div class="stat-label">Revenue</div>
+            <div class="stat-value">$45,231</div>
+            <div class="stat-change positive">↑ 8.2%</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: rgba(34, 197, 94, 0.1);">
+            <span>🛒</span>
+          </div>
+          <div class="stat-info">
+            <div class="stat-label">Orders</div>
+            <div class="stat-value">2,345</div>
+            <div class="stat-change positive">↑ 23.1%</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: rgba(251, 146, 60, 0.1);">
+            <span>👥</span>
+          </div>
+          <div class="stat-info">
+            <div class="stat-label">New Users</div>
+            <div class="stat-value">892</div>
+            <div class="stat-change negative">↓ 3.4%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-row">
+        <div class="chart-card">
+          <div class="card-header">
+            <h3>Revenue Overview</h3>
+            <select class="period-select">
+              <option>Last 7 days</option>
+              <option>Last 30 days</option>
+              <option>Last 90 days</option>
+            </select>
+          </div>
+          <div class="card-body">
+            <canvas id="revenueChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="card-header">
+            <h3>Traffic Sources</h3>
+          </div>
+          <div class="card-body">
+            <canvas id="trafficChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row -->
+      <div class="charts-row">
+        <div class="chart-card">
+          <div class="card-header">
+            <h3>User Activity</h3>
+          </div>
+          <div class="card-body">
+            <canvas id="activityChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="card-header">
+            <h3>Recent Orders</h3>
+            <a href="#" class="view-all">View All</a>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Product</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#ORD-001</td>
+                    <td>Alice Smith</td>
+                    <td>Premium Plan</td>
+                    <td>$99.00</td>
+                    <td><span class="status-badge success">Completed</span></td>
+                  </tr>
+                  <tr>
+                    <td>#ORD-002</td>
+                    <td>Bob Johnson</td>
+                    <td>Basic Plan</td>
+                    <td>$29.00</td>
+                    <td><span class="status-badge warning">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <td>#ORD-003</td>
+                    <td>Carol White</td>
+                    <td>Enterprise</td>
+                    <td>$299.00</td>
+                    <td><span class="status-badge success">Completed</span></td>
+                  </tr>
+                  <tr>
+                    <td>#ORD-004</td>
+                    <td>David Brown</td>
+                    <td>Premium Plan</td>
+                    <td>$99.00</td>
+                    <td><span class="status-badge error">Cancelled</span></td>
+                  </tr>
+                  <tr>
+                    <td>#ORD-005</td>
+                    <td>Eve Davis</td>
+                    <td>Basic Plan</td>
+                    <td>$29.00</td>
+                    <td><span class="status-badge info">Processing</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Section -->
+      <div class="charts-row">
+        <div class="card">
+          <div class="card-header">
+            <h3>Monthly Goals</h3>
+          </div>
+          <div class="card-body">
+            <div class="progress-section">
+              <div class="progress-item">
+                <div class="progress-info">
+                  <span>Revenue Target</span>
+                  <span>75%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 75%;"></div>
+                </div>
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-info">
+                  <span>New Users</span>
+                  <span>62%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 62%;"></div>
+                </div>
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-info">
+                  <span>Orders</span>
+                  <span>89%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 89%;"></div>
+                </div>
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-info">
+                  <span>Customer Satisfaction</span>
+                  <span>94%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 94%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
