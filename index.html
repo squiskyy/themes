@@ -3,101 +3,174 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Themes Collection</title>
+  <title>Themes — Curated Collection</title>
   <style>
     :root {
       --bg: #0a0e1a;
-      --card: #1a2542;
-      --text: #f0f4ff;
-      --muted: #94a3b8;
+      --card: #151f32;
+      --card-hover: #1a2542;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
       --accent: #c9a962;
+      --border: rgba(201, 169, 98, 0.12);
     }
+    
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      padding: 4rem 2rem;
+      padding: 5rem 2rem 3rem;
+      line-height: 1.6;
     }
+    
     .container {
-      max-width: 1200px;
+      max-width: 1300px;
       margin: 0 auto;
     }
+    
     header {
       text-align: center;
       margin-bottom: 4rem;
     }
+    
     h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--text), var(--accent));
+      font-size: 3.25rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: -1.5px;
+      background: linear-gradient(135deg, #f8fafc 0%, var(--accent) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
+    
     .subtitle {
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 1.125rem;
+      max-width: 500px;
+      margin: 0 auto;
     }
+    
     .themes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.75rem;
     }
+    
     .theme-card {
       background: var(--card);
-      border-radius: 12px;
+      border-radius: 1rem;
       overflow: hidden;
-      border: 1px solid rgba(201, 169, 98, 0.1);
-      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
     }
+    
+    .theme-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    
     .theme-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
       border-color: var(--accent);
-      box-shadow: 0 10px 40px rgba(201, 169, 98, 0.15);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 40px rgba(201, 169, 98, 0.1);
     }
+    
+    .theme-card:hover::before {
+      opacity: 1;
+    }
+    
     .theme-preview {
-      height: 180px;
+      height: 160px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 4rem;
+      font-size: 4.5rem;
+      position: relative;
+      overflow: hidden;
     }
+    
+    .theme-preview::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(transparent, rgba(0,0,0,0.3));
+      pointer-events: none;
+    }
+    
     .theme-info {
       padding: 1.5rem;
     }
+    
     .theme-info h3 {
       font-size: 1.5rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
+      letter-spacing: -0.5px;
     }
+    
     .theme-info p {
-      color: var(--muted);
-      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
       line-height: 1.6;
+      font-size: 0.9375rem;
     }
+    
     .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.375rem;
       background: var(--accent);
       color: var(--bg);
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 0.5rem;
       font-weight: 600;
-      transition: all 0.2s;
-    }
-    .btn:hover {
-      opacity: 0.9;
-      transform: translateY(-2px);
-    }
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(201, 169, 98, 0.1);
-      color: var(--muted);
+      font-size: 0.90625rem;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
     }
     
-    /* Theme-specific preview colors */
+    .btn:hover {
+      background: #d4b978;
+      transform: translateY(-1px);
+    }
+    
+    .btn::after {
+      content: '→';
+      transition: transform 0.2s ease;
+    }
+    
+    .btn:hover::after {
+      transform: translateX(3px);
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+    
+    /* Theme preview gradients */
     .nebula { background: linear-gradient(135deg, #0a0a0f, #8b5cf6); }
     .horizon { background: linear-gradient(135deg, #f5f5f4, #f97316); }
     .atlantis { background: linear-gradient(135deg, #0c1929, #06b6d4); }
@@ -107,13 +180,19 @@
     .slate { background: linear-gradient(135deg, #0a0a0a, #737373); }
     .sakura { background: linear-gradient(135deg, #fef2f2, #f472b6); }
     .cyber { background: linear-gradient(135deg, #030014, #00ff9d); }
+    
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      .themes-grid { grid-template-columns: 1fr; }
+      body { padding: 3rem 1.5rem 2rem; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <h1>Themes Collection</h1>
-      <p class="subtitle">Beautiful, production-ready themes for your next project</p>
+      <p class="subtitle">Nine beautifully crafted, production-ready themes with refined design and attention to detail</p>
     </header>
 
     <div class="themes-grid">
@@ -121,8 +200,8 @@
         <div class="theme-preview horizon">🌅</div>
         <div class="theme-info">
           <h3>Horizon</h3>
-          <p>Warm sunrise-inspired theme with coral accents. Clean, inviting, and professional.</p>
-          <a href="horizon/" class="btn">View Theme</a>
+          <p>Warm sunrise-inspired theme with coral accents. Clean, inviting, and professionally polished.</p>
+          <a href="horizon/" class="btn">Preview</a>
         </div>
       </div>
 
@@ -130,8 +209,8 @@
         <div class="theme-preview atlantis">🌊</div>
         <div class="theme-info">
           <h3>Atlantis</h3>
-          <p>Deep ocean admin dashboard with Chart.js integration. Professional data visualization.</p>
-          <a href="atlantis/" class="btn">View Theme</a>
+          <p>Deep ocean admin dashboard with Chart.js integration. Glass morphism meets data visualization.</p>
+          <a href="atlantis/" class="btn">Preview</a>
         </div>
       </div>
 
@@ -139,8 +218,8 @@
         <div class="theme-preview nebula">✨</div>
         <div class="theme-info">
           <h3>Nebula</h3>
-          <p>Cosmic purple and pink gradients. Perfect for modern SaaS and tech products.</p>
-          <a href="nebula/" class="btn">View Theme</a>
+          <p>Cosmic purple and pink gradients with subtle animations. Perfect for modern SaaS products.</p>
+          <a href="nebula/" class="btn">Preview</a>
         </div>
       </div>
 
@@ -148,8 +227,8 @@
         <div class="theme-preview forest">🌿</div>
         <div class="theme-info">
           <h3>Forest</h3>
-          <p>Earthy greens and natural tones. Ideal for eco-friendly and organic brands.</p>
-          <a href="forest/" class="btn">View Theme</a>
+          <p>Earthy greens and natural tones. Ideal for eco-friendly brands and organic products.</p>
+          <a href="forest/" class="btn">Preview</a>
         </div>
       </div>
 
@@ -157,8 +236,8 @@
         <div class="theme-preview ember">🔥</div>
         <div class="theme-info">
           <h3>Ember</h3>
-          <p>Bold fiery oranges and reds. Make a statement with this passionate design.</p>
-          <a href="ember/" class="btn">View Theme</a>
+          <p>Bold fiery oranges and reds. Make a passionate statement with this energetic design.</p>
+          <a href="ember/" class="btn">Preview</a>
         </div>
       </div>
 
@@ -166,8 +245,8 @@
         <div class="theme-preview arctic">❄️</div>
         <div class="theme-info">
           <h3>Arctic</h3>
-          <p>Cool blues and crisp whites. Clean, refreshing, and effortlessly beautiful.</p>
-          <a href="arctic/" class="btn">View Theme</a>
+          <p>Cool blues and crisp whites. Clean, refreshing, and effortlessly professional.</p>
+          <a href="arctic/" class="btn">Preview</a>
         </div>
       </div>
 
@@ -175,8 +254,8 @@
         <div class="theme-preview slate">◼</div>
         <div class="theme-info">
           <h3>Slate</h3>
-          <p>Minimal monochrome elegance. Less is more with this sophisticated palette.</p>
-          <a href="slate/" class="btn">View Theme</a>
+          <p>Minimal monochrome elegance. Sophisticated simplicity for discerning projects.</p>
+          <a href="slate/" class="btn">Preview</a>
         </div>
       </div>
 
@@ -184,8 +263,8 @@
         <div class="theme-preview sakura">🌸</div>
         <div class="theme-info">
           <h3>Sakura</h3>
-          <p>Soft pink cherry blossom theme. Delicate, feminine, and beautifully subtle.</p>
-          <a href="sakura/" class="btn">View Theme</a>
+          <p>Soft pink cherry blossom theme. Delicate, feminine, and beautifully refined.</p>
+          <a href="sakura/" class="btn">Preview</a>
         </div>
       </div>
 
@@ -193,14 +272,14 @@
         <div class="theme-preview cyber">💾</div>
         <div class="theme-info">
           <h3>Cyber</h3>
-          <p>Neon futurism with glowing greens. Enter the matrix with this cyberpunk aesthetic.</p>
-          <a href="cyber/" class="btn">View Theme</a>
+          <p>Neon futurism with glowing greens. Cyberpunk aesthetic for the digital age.</p>
+          <a href="cyber/" class="btn">Preview</a>
         </div>
       </div>
     </div>
 
     <footer>
-      <p>Built with care • 9 unique themes • Ready to deploy</p>
+      <p>Crafted with care • 9 unique themes • Production ready</p>
     </footer>
   </div>
 </body>
