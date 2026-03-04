@@ -3,53 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sakura — Cherry Blossom</title>
+  <title>Sakura — Bloom Where You Are</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <div class="petals"></div>
   
   <nav class="nav">
-    <div class="container">
-      <div class="logo">🌸 Sakura</div>
+    <div class="container nav-content">
+      <div class="logo">
+        <span>🌸</span>
+        <span>Sakura</span>
+      </div>
       <div class="nav-links">
-        <a href="#">Collection</a>
-        <a href="#">Story</a>
+        <a href="#" class="active">Collection</a>
+        <a href="#">Our Story</a>
+        <a href="#">Journal</a>
         <a href="#">Visit</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-btn">🔍</button>
+        <button class="icon-btn">
+          🛒
+          <span class="cart-count">0</span>
+        </button>
       </div>
     </div>
   </nav>
 
   <main>
+    <!-- Hero -->
     <section class="hero">
       <div class="container">
+        <div class="hero-badge">
+          <span>🌸</span>
+          <span>Spring Collection Now Available</span>
+        </div>
         <h1>Bloom Where You Are</h1>
-        <p>Embrace the beauty of fleeting moments. Our collection celebrates the ephemeral nature of cherry blossoms.</p>
-        <button class="btn">Explore Collection</button>
+        <p>Embrace the beauty of fleeting moments. Our collection celebrates the ephemeral nature of cherry blossoms and the art of mindful living.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg">Explore Collection</button>
+          <button class="btn btn-ghost btn-lg">Our Story</button>
+        </div>
       </div>
     </section>
 
+    <!-- Collection -->
     <section class="collection">
       <div class="container">
+        <div class="section-header">
+          <h2>Spring Collection</h2>
+          <p>Delicate pieces inspired by nature's fleeting beauty</p>
+        </div>
         <div class="collection-grid">
           <div class="collection-item">
-            <div class="item-img"></div>
-            <h3>Spring Breeze</h3>
-            <p>Light as air</p>
+            <div class="item-image">
+              <span class="item-badge">New</span>
+            </div>
+            <div class="item-info">
+              <h3>Spring Breeze</h3>
+              <p class="item-desc">Light as air, soft as petals</p>
+              <p class="price">$89</p>
+              <button class="btn btn-primary btn-sm">View Details</button>
+            </div>
           </div>
           <div class="collection-item">
-            <div class="item-img"></div>
-            <h3>Petal Soft</h3>
-            <p>Gentle touch</p>
+            <div class="item-image"></div>
+            <div class="item-info">
+              <h3>Petal Soft</h3>
+              <p class="item-desc">Gentle touch, lasting comfort</p>
+              <p class="price">$124</p>
+              <button class="btn btn-primary btn-sm">View Details</button>
+            </div>
           </div>
           <div class="collection-item">
-            <div class="item-img"></div>
-            <h3>Bloom</h3>
-            <p>Full flourish</p>
+            <div class="item-image">
+              <span class="item-badge">Bestseller</span>
+            </div>
+            <div class="item-info">
+              <h3>Bloom</h3>
+              <p class="item-desc">Full flourish, pure elegance</p>
+              <p class="price">$156</p>
+              <button class="btn btn-primary btn-sm">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="section-cta">
+          <a href="#" class="btn btn-ghost">View All Products →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="story">
+      <div class="container">
+        <div class="story-content">
+          <div class="story-text">
+            <h2>The Art of Mindful Living</h2>
+            <p>In Japan, cherry blossoms symbolize the beauty and transience of life. Our collection draws inspiration from this philosophy, creating pieces that celebrate the present moment.</p>
+            <p>Each item is thoughtfully designed to bring a sense of calm and beauty to your daily ritual.</p>
+            <a href="#" class="btn btn-primary">Read Our Story</a>
+          </div>
+          <div class="story-image">
+            <div class="story-placeholder">🌸</div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Values -->
+    <section class="values">
+      <div class="container">
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="value-icon">🌿</div>
+            <h3>Sustainable</h3>
+            <p>Eco-friendly materials and processes</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🤲</div>
+            <h3>Handcrafted</h3>
+            <p>Artisan made with care</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">💝</div>
+            <h3>Thoughtful</h3>
+            <p>Designed for mindful living</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+        <h2>Begin Your Journey</h2>
+        <p>Discover the beauty of mindful living.</p>
+        <button class="btn btn-primary btn-lg">Shop Collection</button>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span>🌸</span>
+          <span>Sakura</span>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <a href="#">All Products</a>
+            <a href="#">New Arrivals</a>
+            <a href="#">Gift Sets</a>
+          </div>
+          <div class="footer-col">
+            <h4>About</h4>
+            <a href="#">Our Story</a>
+            <a href="#">Sustainability</a>
+            <a href="#">Journal</a>
+          </div>
+          <div class="footer-col">
+            <h4>Help</h4>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Sakura. Embrace the moment.</p>
+          <div class="footer-social">
+            <a href="#">📷</a>
+            <a href="#">📌</a>
+            <a href="#">📘</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

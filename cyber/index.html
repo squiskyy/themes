@@ -3,51 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyber — Neon Futurism</title>
+  <title>Cyber — Enter the Future</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <div class="grid-bg"></div>
+  <div class="scanlines"></div>
   
   <nav class="nav">
-    <div class="container">
+    <div class="container nav-content">
       <div class="logo">CYBER</div>
       <div class="nav-links">
-        <a href="#">Systems</a>
+        <a href="#" class="active">Systems</a>
         <a href="#">Network</a>
         <a href="#">Access</a>
+        <a href="#">Docs</a>
+      </div>
+      <div class="nav-actions">
+        <span class="status-indicator">
+          <span class="status-dot"></span>
+          <span>SYSTEM ONLINE</span>
+        </span>
+        <button class="btn btn-primary">CONNECT</button>
       </div>
     </div>
   </nav>
 
   <main>
+    <!-- Hero -->
     <section class="hero">
       <div class="container">
-        <h1><span class="neon">Enter</span> the Future</h1>
-        <p>Next-generation interfaces for the digital age. Connect to the matrix.</p>
-        <button class="btn btn-primary">Initialize</button>
+        <div class="hero-badge">
+          <span class="glitch">SYSTEM v3.0</span>
+          <span>NOW DEPLOYED</span>
+        </div>
+        <h1>
+          <span class="neon">Enter</span>
+          <br>the Future
+        </h1>
+        <p>Next-generation interfaces for the digital age. Connect to the matrix and experience the future of web interaction.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg">
+            <span>⚡</span> Initialize
+          </button>
+          <button class="btn btn-ghost btn-lg">
+            <span>▶</span> Watch Demo
+          </button>
+        </div>
+        <div class="hero-code">
+          <pre><code><span class="keyword">const</span> cyber = <span class="function">require</span>(<span class="string">'cyber'</span>);
+
+<span class="keyword">await</span> cyber.<span class="function">connect</span>({
+  mode: <span class="string">'neural'</span>,
+  security: <span class="string">'maximum'</span>
+});
+
+<span class="comment">// Welcome to the future</span></code></pre>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">0.02ms</div>
+            <div class="stat-label">Latency</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div class="stat-num">10K+</div>
+            <div class="stat-label">Nodes</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Encrypted</div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- Systems -->
     <section class="systems">
       <div class="container">
-        <div class="system-card">
-          <div class="system-icon">◈</div>
-          <h3>Neural Network</h3>
-          <p>AI-powered analytics</p>
+        <div class="section-header">
+          <h2>Core Systems</h2>
+          <p>Advanced technology for the modern web</p>
         </div>
-        <div class="system-card">
-          <div class="system-icon">⟡</div>
-          <h3>Quantum Core</h3>
-          <p>Next-gen processing</p>
+        <div class="systems-grid">
+          <div class="system-card">
+            <div class="system-icon">◈</div>
+            <h3>Neural Network</h3>
+            <p>AI-powered analytics that adapt to your needs in real-time.</p>
+            <ul class="system-features">
+              <li>Machine learning</li>
+              <li>Pattern recognition</li>
+              <li>Predictive analysis</li>
+            </ul>
+          </div>
+          <div class="system-card">
+            <div class="system-icon">⟡</div>
+            <h3>Quantum Core</h3>
+            <p>Next-generation processing for unprecedented performance.</p>
+            <ul class="system-features">
+              <li>Quantum encryption</li>
+              <li>Parallel processing</li>
+              <li>Zero latency</li>
+            </ul>
+          </div>
+          <div class="system-card">
+            <div class="system-icon">◉</div>
+            <h3>Cyber Security</h3>
+            <p>Fortress-level protection for your digital assets.</p>
+            <ul class="system-features">
+              <li>End-to-end encryption</li>
+              <li>Biometric auth</li>
+              <li>Threat detection</li>
+            </ul>
+          </div>
         </div>
-        <div class="system-card">
-          <div class="system-icon">◉</div>
-          <h3>Cyber Security</h3>
-          <p>Fortress-level protection</p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>System Capabilities</h2>
+        </div>
+        <div class="features-list">
+          <div class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Real-time data synchronization</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Decentralized architecture</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Neural interface ready</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Quantum-resistant encryption</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+        <h2>Ready to Connect?</h2>
+        <p>Join the network. The future is now.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-lg">Initialize System</button>
+          <button class="btn btn-ghost btn-lg">Access Docs</button>
         </div>
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">CYBER</div>
+        <div class="footer-links">
+          <a href="#">Systems</a>
+          <a href="#">Network</a>
+          <a href="#">Security</a>
+          <a href="#">Documentation</a>
+        </div>
+        <p class="copyright">© 2026 CYBER SYSTEMS. All rights reserved.</p>
+        <p class="system-status">SYSTEM STATUS: <span class="status-online">ONLINE</span></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
