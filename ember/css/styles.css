@@ -1,0 +1,168 @@
+/* Ember — Fiery Orange/Red Theme */
+
+:root {
+  --ember-dark: #1a0a00;
+  --ember-base: #2d1200;
+  --orange: #f97316;
+  --orange-light: #fb923c;
+  --red: #dc2626;
+  --yellow: #fbbf24;
+  --cream: #fef3e7;
+  --text: #f8fafc;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--ember-dark);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nav {
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--orange), var(--red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  color: var(--orange);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.hero {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--orange), var(--yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--orange-light);
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--orange), var(--red));
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(249, 115, 22, 0.4);
+}
+
+.btn-lg {
+  font-size: 1.125rem;
+}
+
+.showcase {
+  padding: 5rem 0;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.showcase-item {
+  background: var(--ember-base);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(249, 115, 22, 0.1);
+  transition: all 0.3s;
+}
+
+.showcase-item:hover {
+  border-color: var(--orange);
+  transform: translateY(-5px);
+}
+
+.showcase-num {
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(249, 115, 22, 0.2);
+  margin-bottom: 1rem;
+}
+
+.showcase-item h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--orange);
+}
+
+.showcase-item p {
+  color: var(--orange-light);
+}
+
+.code-section {
+  padding: 5rem 0;
+}
+
+.code-block {
+  background: var(--ember-base);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  overflow-x: auto;
+}
+
+code {
+  font-family: 'Monaco', 'Consolas', monospace;
+  color: var(--orange-light);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+footer {
+  padding: 3rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(249, 115, 22, 0.1);
+  color: var(--orange-light);
+}
+
+.fireflies {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+}
