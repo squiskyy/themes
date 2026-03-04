@@ -6,160 +6,201 @@
   <title>Themes Collection</title>
   <style>
     :root {
-      --bg-dark: #0a0e1a;
-      --bg-card: #1a2542;
-      --text-primary: #f0f4ff;
-      --text-secondary: rgba(240, 244, 255, 0.7);
-      --accent: #ffd700;
+      --bg: #0a0e1a;
+      --card: #1a2542;
+      --text: #f0f4ff;
+      --muted: #94a3b8;
+      --accent: #c9a962;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       min-height: 100vh;
-      padding: 60px 20px;
+      padding: 4rem 2rem;
     }
-
     .container {
       max-width: 1200px;
       margin: 0 auto;
     }
-
     header {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 4rem;
     }
-
     h1 {
       font-size: 3rem;
-      margin-bottom: 15px;
-      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--text), var(--accent));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
-
     .subtitle {
-      color: var(--text-secondary);
-      font-size: 1.2rem;
+      color: var(--muted);
+      font-size: 1.125rem;
     }
-
     .themes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
     }
-
     .theme-card {
-      background: var(--bg-card);
-      border-radius: 15px;
+      background: var(--card);
+      border-radius: 12px;
       overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(201, 169, 98, 0.1);
+      transition: all 0.3s ease;
     }
-
     .theme-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2);
+      border-color: var(--accent);
+      box-shadow: 0 10px 40px rgba(201, 169, 98, 0.15);
     }
-
     .theme-preview {
-      height: 200px;
-      background: linear-gradient(180deg, #0a0e1a 0%, #1a2542 100%);
+      height: 180px;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
+      font-size: 4rem;
     }
-
-    .theme-preview::before {
-      content: '';
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent);
-      filter: blur(20px);
-    }
-
-    .theme-name {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--accent);
-      z-index: 1;
-    }
-
     .theme-info {
-      padding: 25px;
+      padding: 1.5rem;
     }
-
     .theme-info h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
     }
-
     .theme-info p {
-      color: var(--text-secondary);
+      color: var(--muted);
+      margin-bottom: 1.5rem;
       line-height: 1.6;
-      margin-bottom: 20px;
     }
-
     .btn {
       display: inline-block;
-      padding: 12px 30px;
-      background: linear-gradient(135deg, var(--accent), #ffec8b);
-      color: var(--bg-dark);
+      padding: 0.75rem 1.5rem;
+      background: var(--accent);
+      color: var(--bg);
       text-decoration: none;
-      border-radius: 50px;
+      border-radius: 8px;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
+      transition: all 0.2s;
     }
-
     .btn:hover {
+      opacity: 0.9;
       transform: translateY(-2px);
-      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
     }
-
     footer {
       text-align: center;
-      margin-top: 60px;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255, 215, 0, 0.1);
-      color: var(--text-secondary);
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(201, 169, 98, 0.1);
+      color: var(--muted);
     }
+    
+    /* Theme-specific preview colors */
+    .nebula { background: linear-gradient(135deg, #0a0a0f, #8b5cf6); }
+    .horizon { background: linear-gradient(135deg, #f5f5f4, #f97316); }
+    .atlantis { background: linear-gradient(135deg, #0c1929, #06b6d4); }
+    .forest { background: linear-gradient(135deg, #1a2e1a, #4a7c4a); }
+    .ember { background: linear-gradient(135deg, #1a0a00, #f97316); }
+    .arctic { background: linear-gradient(135deg, #0c1929, #0ea5e9); }
+    .slate { background: linear-gradient(135deg, #0a0a0a, #737373); }
+    .sakura { background: linear-gradient(135deg, #fef2f2, #f472b6); }
+    .cyber { background: linear-gradient(135deg, #030014, #00ff9d); }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <h1>Themes Collection</h1>
-      <p class="subtitle">Static web themes ready to drop into your project</p>
+      <p class="subtitle">Beautiful, production-ready themes for your next project</p>
     </header>
 
     <div class="themes-grid">
       <div class="theme-card">
-        <div class="theme-preview">
-          <span class="theme-name">Midnight</span>
-        </div>
+        <div class="theme-preview horizon">🌅</div>
         <div class="theme-info">
-          <h3>Midnight</h3>
-          <p>Celestial night theme with deep blues, golden accents, and animated starfield effects.</p>
-          <a href="midnight/" class="btn">View Theme</a>
+          <h3>Horizon</h3>
+          <p>Warm sunrise-inspired theme with coral accents. Clean, inviting, and professional.</p>
+          <a href="horizon/" class="btn">View Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-card">
+        <div class="theme-preview atlantis">🌊</div>
+        <div class="theme-info">
+          <h3>Atlantis</h3>
+          <p>Deep ocean admin dashboard with Chart.js integration. Professional data visualization.</p>
+          <a href="atlantis/" class="btn">View Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-card">
+        <div class="theme-preview nebula">✨</div>
+        <div class="theme-info">
+          <h3>Nebula</h3>
+          <p>Cosmic purple and pink gradients. Perfect for modern SaaS and tech products.</p>
+          <a href="nebula/" class="btn">View Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-card">
+        <div class="theme-preview forest">🌿</div>
+        <div class="theme-info">
+          <h3>Forest</h3>
+          <p>Earthy greens and natural tones. Ideal for eco-friendly and organic brands.</p>
+          <a href="forest/" class="btn">View Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-card">
+        <div class="theme-preview ember">🔥</div>
+        <div class="theme-info">
+          <h3>Ember</h3>
+          <p>Bold fiery oranges and reds. Make a statement with this passionate design.</p>
+          <a href="ember/" class="btn">View Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-card">
+        <div class="theme-preview arctic">❄️</div>
+        <div class="theme-info">
+          <h3>Arctic</h3>
+          <p>Cool blues and crisp whites. Clean, refreshing, and effortlessly beautiful.</p>
+          <a href="arctic/" class="btn">View Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-card">
+        <div class="theme-preview slate">◼</div>
+        <div class="theme-info">
+          <h3>Slate</h3>
+          <p>Minimal monochrome elegance. Less is more with this sophisticated palette.</p>
+          <a href="slate/" class="btn">View Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-card">
+        <div class="theme-preview sakura">🌸</div>
+        <div class="theme-info">
+          <h3>Sakura</h3>
+          <p>Soft pink cherry blossom theme. Delicate, feminine, and beautifully subtle.</p>
+          <a href="sakura/" class="btn">View Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-card">
+        <div class="theme-preview cyber">💾</div>
+        <div class="theme-info">
+          <h3>Cyber</h3>
+          <p>Neon futurism with glowing greens. Enter the matrix with this cyberpunk aesthetic.</p>
+          <a href="cyber/" class="btn">View Theme</a>
         </div>
       </div>
     </div>
 
     <footer>
-      <p>More themes coming soon...</p>
+      <p>Built with care • 9 unique themes • Ready to deploy</p>
     </footer>
   </div>
 </body>
