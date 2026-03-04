@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atlantis Admin Dashboard</title>
+  <title>Atlantis — Admin Dashboard</title>
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -11,7 +11,11 @@
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="sidebar-header">
-      <div class="logo">🌊 Atlantis</div>
+      <div class="logo">
+        <span class="logo-icon">🌊</span>
+        <span>Atlantis</span>
+      </div>
+      <p class="logo-subtitle">Admin Dashboard</p>
     </div>
     
     <nav class="sidebar-nav">
@@ -26,6 +30,7 @@
       <a href="#" class="nav-item">
         <span class="nav-icon">👥</span>
         <span>Users</span>
+        <span class="badge">2.4K</span>
       </a>
       <a href="#" class="nav-item">
         <span class="nav-icon">📦</span>
@@ -34,15 +39,21 @@
       <a href="#" class="nav-item">
         <span class="nav-icon">🛒</span>
         <span>Orders</span>
+        <span class="badge warning">12</span>
       </a>
       <a href="#" class="nav-item">
         <span class="nav-icon">💬</span>
         <span>Messages</span>
         <span class="badge">3</span>
       </a>
+      <div class="nav-separator"></div>
       <a href="#" class="nav-item">
         <span class="nav-icon">⚙️</span>
         <span>Settings</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">📊</span>
+        <span>Reports</span>
       </a>
     </nav>
 
@@ -53,6 +64,7 @@
           <div class="user-name">John Doe</div>
           <div class="user-role">Administrator</div>
         </div>
+        <button class="user-menu-btn" title="Menu">⋮</button>
       </div>
     </div>
   </aside>
@@ -62,16 +74,21 @@
     <!-- Top Bar -->
     <header class="topbar">
       <div class="topbar-left">
-        <button class="menu-toggle">☰</button>
-        <h1 class="page-title">Dashboard</h1>
+        <button class="menu-toggle" title="Toggle Menu">☰</button>
+        <h1 class="page-title">Dashboard Overview</h1>
+        <span class="page-subtitle">Welcome back, John</span>
       </div>
       <div class="topbar-right">
         <div class="search-box">
           <input type="text" placeholder="Search...">
           <span class="search-icon">🔍</span>
         </div>
-        <button class="icon-btn">🔔</button>
-        <button class="icon-btn">⚙️</button>
+        <button class="icon-btn" title="Notifications">
+          🔔
+          <span class="icon-badge">5</span>
+        </button>
+        <button class="icon-btn" title="Settings">⚙️</button>
+        <button class="icon-btn" title="Help">?</button>
       </div>
     </header>
 
@@ -80,46 +97,58 @@
       <!-- Stats Cards -->
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-icon" style="background: rgba(56, 189, 248, 0.1);">
+          <div class="stat-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">
             <span>👁️</span>
           </div>
           <div class="stat-info">
             <div class="stat-label">Total Views</div>
             <div class="stat-value">128,430</div>
-            <div class="stat-change positive">↑ 12.5%</div>
+            <div class="stat-change positive">
+              <span class="change-icon">↑</span>
+              <span>12.5% from last month</span>
+            </div>
           </div>
         </div>
 
         <div class="stat-card">
-          <div class="stat-icon" style="background: rgba(168, 85, 247, 0.1);">
+          <div class="stat-icon" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;">
             <span>💰</span>
           </div>
           <div class="stat-info">
-            <div class="stat-label">Revenue</div>
+            <div class="stat-label">Total Revenue</div>
             <div class="stat-value">$45,231</div>
-            <div class="stat-change positive">↑ 8.2%</div>
+            <div class="stat-change positive">
+              <span class="change-icon">↑</span>
+              <span>8.2% from last month</span>
+            </div>
           </div>
         </div>
 
         <div class="stat-card">
-          <div class="stat-icon" style="background: rgba(34, 197, 94, 0.1);">
+          <div class="stat-icon" style="background: rgba(34, 197, 94, 0.15); color: #22c55e;">
             <span>🛒</span>
           </div>
           <div class="stat-info">
             <div class="stat-label">Orders</div>
             <div class="stat-value">2,345</div>
-            <div class="stat-change positive">↑ 23.1%</div>
+            <div class="stat-change positive">
+              <span class="change-icon">↑</span>
+              <span>23.1% from last month</span>
+            </div>
           </div>
         </div>
 
         <div class="stat-card">
-          <div class="stat-icon" style="background: rgba(251, 146, 60, 0.1);">
+          <div class="stat-icon" style="background: rgba(251, 146, 60, 0.15); color: #fb923c;">
             <span>👥</span>
           </div>
           <div class="stat-info">
             <div class="stat-label">New Users</div>
             <div class="stat-value">892</div>
-            <div class="stat-change negative">↓ 3.4%</div>
+            <div class="stat-change negative">
+              <span class="change-icon">↓</span>
+              <span>3.4% from last month</span>
+            </div>
           </div>
         </div>
       </div>
@@ -128,24 +157,35 @@
       <div class="charts-row">
         <div class="chart-card">
           <div class="card-header">
-            <h3>Revenue Overview</h3>
+            <div>
+              <h3>Revenue Overview</h3>
+              <p class="card-subtitle">Monthly revenue performance</p>
+            </div>
             <select class="period-select">
               <option>Last 7 days</option>
               <option>Last 30 days</option>
               <option>Last 90 days</option>
+              <option>This year</option>
             </select>
           </div>
           <div class="card-body">
-            <canvas id="revenueChart"></canvas>
+            <div class="chart-container">
+              <canvas id="revenueChart"></canvas>
+            </div>
           </div>
         </div>
 
         <div class="chart-card">
           <div class="card-header">
-            <h3>Traffic Sources</h3>
+            <div>
+              <h3>Traffic Sources</h3>
+              <p class="card-subtitle">Where your visitors come from</p>
+            </div>
           </div>
           <div class="card-body">
-            <canvas id="trafficChart"></canvas>
+            <div class="chart-container">
+              <canvas id="trafficChart"></canvas>
+            </div>
           </div>
         </div>
       </div>
@@ -154,17 +194,26 @@
       <div class="charts-row">
         <div class="chart-card">
           <div class="card-header">
-            <h3>User Activity</h3>
+            <div>
+              <h3>User Activity</h3>
+              <p class="card-subtitle">Active users throughout the day</p>
+            </div>
+            <button class="btn-icon" title="More options">⋮</button>
           </div>
           <div class="card-body">
-            <canvas id="activityChart"></canvas>
+            <div class="chart-container">
+              <canvas id="activityChart"></canvas>
+            </div>
           </div>
         </div>
 
         <div class="chart-card">
           <div class="card-header">
-            <h3>Recent Orders</h3>
-            <a href="#" class="view-all">View All</a>
+            <div>
+              <h3>Recent Orders</h3>
+              <p class="card-subtitle">Latest transactions</p>
+            </div>
+            <a href="#" class="view-all">View All →</a>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -176,43 +225,49 @@
                     <th>Product</th>
                     <th>Amount</th>
                     <th>Status</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>#ORD-001</td>
+                    <td><strong>#ORD-001</strong></td>
                     <td>Alice Smith</td>
                     <td>Premium Plan</td>
                     <td>$99.00</td>
                     <td><span class="status-badge success">Completed</span></td>
+                    <td><button class="action-btn">View</button></td>
                   </tr>
                   <tr>
-                    <td>#ORD-002</td>
+                    <td><strong>#ORD-002</strong></td>
                     <td>Bob Johnson</td>
                     <td>Basic Plan</td>
                     <td>$29.00</td>
                     <td><span class="status-badge warning">Pending</span></td>
+                    <td><button class="action-btn">View</button></td>
                   </tr>
                   <tr>
-                    <td>#ORD-003</td>
+                    <td><strong>#ORD-003</strong></td>
                     <td>Carol White</td>
                     <td>Enterprise</td>
                     <td>$299.00</td>
                     <td><span class="status-badge success">Completed</span></td>
+                    <td><button class="action-btn">View</button></td>
                   </tr>
                   <tr>
-                    <td>#ORD-004</td>
+                    <td><strong>#ORD-004</strong></td>
                     <td>David Brown</td>
                     <td>Premium Plan</td>
                     <td>$99.00</td>
                     <td><span class="status-badge error">Cancelled</span></td>
+                    <td><button class="action-btn">View</button></td>
                   </tr>
                   <tr>
-                    <td>#ORD-005</td>
+                    <td><strong>#ORD-005</strong></td>
                     <td>Eve Davis</td>
                     <td>Basic Plan</td>
                     <td>$29.00</td>
                     <td><span class="status-badge info">Processing</span></td>
+                    <td><button class="action-btn">View</button></td>
                   </tr>
                 </tbody>
               </table>
@@ -223,15 +278,22 @@
 
       <!-- Progress Section -->
       <div class="charts-row">
-        <div class="card">
+        <div class="card full-width">
           <div class="card-header">
-            <h3>Monthly Goals</h3>
+            <div>
+              <h3>Monthly Goals Progress</h3>
+              <p class="card-subtitle">Track your performance against targets</p>
+            </div>
+            <button class="btn btn-sm btn-outline">Export Report</button>
           </div>
           <div class="card-body">
             <div class="progress-section">
               <div class="progress-item">
                 <div class="progress-info">
-                  <span>Revenue Target</span>
+                  <div class="progress-label-group">
+                    <span class="progress-label">Revenue Target</span>
+                    <span class="progress-sublabel">$45K / $60K goal</span>
+                  </div>
                   <span>75%</span>
                 </div>
                 <div class="progress-bar">
@@ -241,7 +303,10 @@
 
               <div class="progress-item">
                 <div class="progress-info">
-                  <span>New Users</span>
+                  <div class="progress-label-group">
+                    <span class="progress-label">New Users</span>
+                    <span class="progress-sublabel">892 / 1,440 goal</span>
+                  </div>
                   <span>62%</span>
                 </div>
                 <div class="progress-bar">
@@ -251,7 +316,10 @@
 
               <div class="progress-item">
                 <div class="progress-info">
-                  <span>Orders</span>
+                  <div class="progress-label-group">
+                    <span class="progress-label">Orders Completed</span>
+                    <span class="progress-sublabel">2,345 / 2,635 goal</span>
+                  </div>
                   <span>89%</span>
                 </div>
                 <div class="progress-bar">
@@ -261,7 +329,10 @@
 
               <div class="progress-item">
                 <div class="progress-info">
-                  <span>Customer Satisfaction</span>
+                  <div class="progress-label-group">
+                    <span class="progress-label">Customer Satisfaction</span>
+                    <span class="progress-sublabel">4.7 / 5.0 rating</span>
+                  </div>
                   <span>94%</span>
                 </div>
                 <div class="progress-bar">
