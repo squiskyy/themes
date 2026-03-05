@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ember — Ignite Your Creativity</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="fireflies"></div>
+  
+  <nav class="nav">
+    <div class="container nav-content">
+      <div class="logo">
+        <span class="logo-icon">🔥</span>
+        <span>Ember</span>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="active">Framework</a>
+        <a href="#">Components</a>
+        <a href="#">Docs</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="nav-link">GitHub</a>
+        <button class="btn btn-primary">Get Started</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">
+          <span>⚡</span>
+          <span>v3.0 Now Available — Faster than ever</span>
+        </div>
+        <h1>
+          <span class="gradient-text">Set Your Ideas</span>
+          <br>on Fire
+        </h1>
+        <p>A blazing fast framework for passionate developers who demand performance without compromise.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg">
+            <span>🚀</span> Start Building
+          </button>
+          <button class="btn btn-ghost btn-lg">
+            <span>📖</span> Read Docs
+          </button>
+        </div>
+        <div class="hero-code">
+          <pre><code><span class="keyword">import</span> { createApp } <span class="keyword">from</span> 'ember';
+
+<span class="keyword">const</span> app = <span class="function">createApp</span>({
+  name: <span class="string">'Your App'</span>,
+  theme: <span class="string">'fire'</span>
+});
+
+app.<span class="function">mount</span>(<span class="string">'#app'</span>);</code></pre>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">60fps</div>
+            <div class="stat-label">Performance</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div class="stat-num">20kb</div>
+            <div class="stat-label">Bundle Size</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div class="stat-num">10K+</div>
+            <div class="stat-label">Developers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="showcase">
+      <div class="container">
+        <div class="section-header">
+          <h2>Why Choose Ember?</h2>
+          <p>Built for developers who demand the best</p>
+        </div>
+        <div class="showcase-grid">
+          <div class="showcase-item">
+            <div class="showcase-num">01</div>
+            <div class="showcase-icon">⚡</div>
+            <h3>Blazing Fast</h3>
+            <p>Optimized runtime with zero-config code splitting. Your app loads instantly, every time.</p>
+            <ul class="feature-list">
+              <li>Tree-shaking by default</li>
+              <li>Lazy loading built-in</li>
+              <li>SSR ready</li>
+            </ul>
+          </div>
+          <div class="showcase-item">
+            <div class="showcase-num">02</div>
+            <div class="showcase-icon">🎨</div>
+            <h3>Bold Design</h3>
+            <p>Make a statement with beautiful defaults and endless customization options.</p>
+            <ul class="feature-list">
+              <li>Theme builder</li>
+              <li>Component library</li>
+              <li>Dark mode ready</li>
+            </ul>
+          </div>
+          <div class="showcase-item">
+            <div class="showcase-num">03</div>
+            <div class="showcase-icon">💪</div>
+            <h3>Powerful</h3>
+            <p>Enterprise-grade features without the complexity. Scale with confidence.</p>
+            <ul class="feature-list">
+              <li>Type-safe</li>
+              <li>State management</li>
+              <li>Testing utilities</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Section -->
+    <section class="code-section">
+      <div class="container">
+        <div class="code-content">
+          <div class="code-text">
+            <h2>Developer Experience First</h2>
+            <p>Ember is designed to feel intuitive. Write less code, do more.</p>
+            <div class="code-features">
+              <div class="code-feature">
+                <span class="feature-check">✓</span>
+                <span>Hot module replacement</span>
+              </div>
+              <div class="code-feature">
+                <span class="feature-check">✓</span>
+                <span>TypeScript support</span>
+              </div>
+              <div class="code-feature">
+                <span class="feature-check">✓</span>
+                <span>Built-in testing</span>
+              </div>
+              <div class="code-feature">
+                <span class="feature-check">✓</span>
+                <span>DevTools extension</span>
+              </div>
+            </div>
+            <a href="#" class="btn btn-primary">Explore Documentation →</a>
+          </div>
+          <div class="code-block">
+            <pre><code><span class="comment">// Component example</span>
+<span class="keyword">const</span> Counter = <span class="function">component</span>(() => {
+  <span class="keyword">const</span> [count, setCount] = <span class="function">useState</span>(0);
+  
+  <span class="keyword">return</span> (
+    &lt;div className=<span class="string">"counter"</span>&gt;
+      &lt;h2&gt;{count}&lt;/h2&gt;
+      &lt;button onClick={() => <span class="function">setCount</span>(count + 1)}&gt;
+        Increment
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+});</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+        <h2>Ready to Ignite?</h2>
+        <p>Join thousands of developers building with Ember.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-lg">Get Started Free</button>
+          <button class="btn btn-ghost btn-lg">View on GitHub</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-icon">🔥</span>
+          <span>Ember</span>
+        </div>
+        <div class="footer-links">
+          <a href="#">Docs</a>
+          <a href="#">Components</a>
+          <a href="#">Examples</a>
+          <a href="#">Community</a>
+          <a href="#">GitHub</a>
+        </div>
+        <p class="copyright">Built with 🔥 by the Ember Team</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

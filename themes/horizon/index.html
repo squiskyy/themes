@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizon Theme — Component Showcase</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container navbar-content">
+      <div class="navbar-brand">
+        <span class="brand-icon">🌅</span>
+        <span>Horizon</span>
+      </div>
+      <ul class="navbar-menu">
+        <li><a href="#" class="active">Overview</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#forms">Forms</a></li>
+        <li><a href="#cards">Cards</a></li>
+      </ul>
+      <button class="btn btn-coral btn-sm">Download</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-badge">
+        <span class="badge-icon">✨</span>
+        <span>Version 2.0 — Now with enhanced components</span>
+      </div>
+      <h1>Horizon</h1>
+      <p class="lead">A warm, inviting theme with coral accents. Clean, professional, and thoughtfully designed for modern web applications.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-coral btn-lg">
+          <span>🚀</span> Get Started
+        </button>
+        <button class="btn btn-outline btn-lg">
+          View Documentation
+        </button>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <div class="trust-num">10K+</div>
+          <div class="trust-label">Downloads</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <div class="trust-num">4.9★</div>
+          <div class="trust-label">Rating</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <div class="trust-num">100%</div>
+          <div class="trust-label">Free</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Palette -->
+    <section class="showcase-section">
+      <h2>Color Palette</h2>
+      <p class="section-intro">A carefully curated palette that balances warmth with professionalism.</p>
+      <div class="color-swatches">
+        <div class="swatch" style="background: var(--white);">
+          <div class="swatch-preview" style="background: var(--white); border: 1px solid var(--sand);"></div>
+          <span>White</span>
+          <code>#ffffff</code>
+        </div>
+        <div class="swatch" style="background: var(--warm-gray);">
+          <div class="swatch-preview" style="background: var(--warm-gray);"></div>
+          <span>Warm Gray</span>
+          <code>#faf9f8</code>
+        </div>
+        <div class="swatch" style="background: var(--sand);">
+          <div class="swatch-preview" style="background: var(--sand);"></div>
+          <span>Sand</span>
+          <code>#e8e6e3</code>
+        </div>
+        <div class="swatch" style="background: var(--coral);">
+          <div class="swatch-preview" style="background: var(--coral);"></div>
+          <span>Coral</span>
+          <code>#f97316</code>
+        </div>
+        <div class="swatch" style="background: var(--slate);">
+          <div class="swatch-preview" style="background: var(--slate);"></div>
+          <span>Slate</span>
+          <code>#374151</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="showcase-section" id="typography">
+      <h2>Typography</h2>
+      <p class="section-intro">Clean, readable typography with excellent hierarchy.</p>
+      <div class="typography-demo">
+        <h1>Heading 1 — The Quick Brown Fox</h1>
+        <h2>Heading 2 — Jumps Over the Lazy</h2>
+        <h3>Heading 3 — Dog Near the Forest</h3>
+        <h4>Heading 4 — Morning Light</h4>
+        <h5>Heading 5 — Gentle Breeze</h5>
+        <h6>Heading 6 — Soft Glow</h6>
+        
+        <p class="mt-4">This is standard body text. The Horizon theme provides excellent readability with carefully chosen font sizes, line heights, and letter spacing. Every element is designed to work harmoniously together, creating a cohesive visual experience that guides the reader naturally through your content.</p>
+        
+        <p class="lead">Lead text that draws attention to important information while maintaining visual balance with surrounding content.</p>
+        
+        <p><strong>Bold text</strong> for emphasis, <em>italic text</em> for nuance, <mark>highlighted text</mark> for key points, and <u>underlined text</u> for special highlights.</p>
+        
+        <blockquote>
+          "Design is not just what it looks like and feels like. Design is how it works."
+          <footer>— Steve Jobs</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="showcase-section" id="components">
+      <h2>Buttons</h2>
+      <p class="section-intro">Multiple button styles for different contexts and actions.</p>
+      
+      <h3>Primary Coral</h3>
+      <div class="button-group">
+        <button class="btn btn-coral">Default</button>
+        <button class="btn btn-coral btn-sm">Small</button>
+        <button class="btn btn-coral btn-lg">Large</button>
+        <button class="btn btn-coral" disabled>Disabled</button>
+      </div>
+
+      <h3 class="mt-4">Primary Blue</h3>
+      <div class="button-group">
+        <button class="btn btn-primary">Default</button>
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+        <button class="btn btn-primary" disabled>Disabled</button>
+      </div>
+
+      <h3 class="mt-4">Outline & Ghost</h3>
+      <div class="button-group">
+        <button class="btn btn-outline">Outline</button>
+        <button class="btn btn-ghost">Ghost</button>
+        <button class="btn btn-ghost" disabled>Disabled</button>
+      </div>
+
+      <h3 class="mt-4">Semantic Colors</h3>
+      <div class="button-group">
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-warning">Warning</button>
+        <button class="btn btn-error">Error</button>
+        <button class="btn btn-secondary">Secondary</button>
+      </div>
+
+      <h3 class="mt-4">Button Group</h3>
+      <div class="btn-group">
+        <button class="btn btn-coral">Left</button>
+        <button class="btn btn-coral">Middle</button>
+        <button class="btn btn-coral">Right</button>
+      </div>
+    </section>
+
+    <!-- Forms -->
+    <section class="showcase-section" id="forms">
+      <h2>Forms</h2>
+      <p class="section-intro">Beautiful, accessible form elements with clear states.</p>
+      <div class="form-demo">
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Jane Smith">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="jane@example.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" class="form-control" placeholder="What's this about?">
+            <small class="form-text">Be specific to get a faster response</small>
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" class="form-control">
+              <option value="">Choose an option</option>
+              <option value="general">General Inquiry</option>
+              <option value="support">Technical Support</option>
+              <option value="feedback">Feedback</option>
+              <option value="sales">Sales Question</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" class="form-control" rows="4" placeholder="Tell us more about your inquiry..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+              <span>Subscribe to our newsletter</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox">
+              <span class="checkmark"></span>
+              <span>I agree to the terms and conditions</span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="radio-label">
+              <input type="radio" name="contact" value="email" checked>
+              <span class="radiomark"></span>
+              <span>Prefer email contact</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="contact" value="phone">
+              <span class="radiomark"></span>
+              <span>Prefer phone contact</span>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-coral">Send Message</button>
+            <button type="reset" class="btn btn-outline">Reset Form</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Alerts -->
+    <section class="showcase-section">
+      <h2>Alerts</h2>
+      <p class="section-intro">Clear, contextual feedback messages.</p>
+      <div class="alert alert-success">
+        <strong>Success!</strong>
+        <span>Your changes have been saved successfully.</span>
+      </div>
+      <div class="alert alert-info">
+        <strong>Heads up!</strong>
+        <span>A new update is available. Refresh to see changes.</span>
+      </div>
+      <div class="alert alert-warning">
+        <strong>Warning!</strong>
+        <span>Please review your settings before continuing.</span>
+      </div>
+      <div class="alert alert-error">
+        <strong>Error!</strong>
+        <span>Something went wrong. Please try again.</span>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="showcase-section" id="cards">
+      <h2>Cards</h2>
+      <p class="section-intro">Versatile card components for content organization.</p>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-badge">Featured</span>
+          </div>
+          <div class="card-body">
+            <h3>Featured Card</h3>
+            <p>This card has a header badge and highlighted styling to draw attention.</p>
+            <button class="btn btn-coral btn-sm">Learn More</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3>Simple Card</h3>
+            <p>A minimal card for displaying content blocks without additional chrome.</p>
+            <button class="btn btn-outline btn-sm">Action</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3>With Footer</h3>
+            <p>This card includes a footer for metadata or secondary actions.</p>
+          </div>
+          <div class="card-footer">
+            <span>Updated 2 hours ago</span>
+            <button class="btn btn-ghost btn-sm">Details</button>
+          </div>
+        </div>
+
+        <div class="card card-highlight">
+          <div class="card-body">
+            <h3>Highlight Card</h3>
+            <p>Special cards with accent borders for important content.</p>
+            <button class="btn btn-coral btn-sm">Explore</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tables -->
+    <section class="showcase-section">
+      <h2>Tables</h2>
+      <p class="section-intro">Clean, readable data tables with hover states.</p>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>City</th>
+              <th>Country</th>
+              <th>Population</th>
+              <th>Timezone</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Tokyo</strong></td>
+              <td>Japan</td>
+              <td>13.9M</td>
+              <td>UTC+9</td>
+              <td><span class="badge badge-success">Active</span></td>
+            </tr>
+            <tr>
+              <td><strong>New York</strong></td>
+              <td>USA</td>
+              <td>8.4M</td>
+              <td>UTC-5</td>
+              <td><span class="badge badge-success">Active</span></td>
+            </tr>
+            <tr>
+              <td><strong>London</strong></td>
+              <td>UK</td>
+              <td>8.9M</td>
+              <td>UTC+0</td>
+              <td><span class="badge badge-warning">Pending</span></td>
+            </tr>
+            <tr>
+              <td><strong>Sydney</strong></td>
+              <td>Australia</td>
+              <td>5.3M</td>
+              <td>UTC+10</td>
+              <td><span class="badge badge-success">Active</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="mt-4">Striped Variant</h3>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Sunrise</th>
+              <th>Sunset</th>
+              <th>Daylight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>January</td>
+              <td>7:24 AM</td>
+              <td>5:12 PM</td>
+              <td>9h 48m</td>
+            </tr>
+            <tr>
+              <td>April</td>
+              <td>6:15 AM</td>
+              <td>7:45 PM</td>
+              <td>13h 30m</td>
+            </tr>
+            <tr>
+              <td>July</td>
+              <td>5:42 AM</td>
+              <td>8:32 PM</td>
+              <td>14h 50m</td>
+            </tr>
+            <tr>
+              <td>October</td>
+              <td>6:58 AM</td>
+              <td>6:18 PM</td>
+              <td>11h 20m</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Badges & Progress -->
+    <section class="showcase-section">
+      <h2>Badges & Progress</h2>
+      <p class="section-intro">Visual indicators and progress tracking.</p>
+      
+      <h3>Badges</h3>
+      <div class="badge-group">
+        <span class="badge badge-primary">Primary</span>
+        <span class="badge badge-coral">Coral</span>
+        <span class="badge badge-secondary">Secondary</span>
+        <span class="badge badge-success">Success</span>
+        <span class="badge badge-warning">Warning</span>
+        <span class="badge badge-error">Error</span>
+        <span class="badge badge-info">Info</span>
+      </div>
+
+      <h3 class="mt-4">Progress Bars</h3>
+      <div class="progress-group">
+        <div class="progress-label">
+          <span>Overall Completion</span>
+          <span>75%</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" style="width: 75%"></div>
+        </div>
+      </div>
+
+      <div class="progress-group">
+        <div class="progress-label">
+          <span>Upload Progress</span>
+          <span>50%</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-coral" style="width: 50%"></div>
+        </div>
+      </div>
+
+      <div class="progress-group">
+        <div class="progress-label">
+          <span>Verification Status</span>
+          <span>90%</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-success" style="width: 90%"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Components -->
+    <section class="showcase-section">
+      <h2>Navigation</h2>
+      <p class="section-intro">Breadcrumbs, pagination, and tabs.</p>
+      
+      <h3>Breadcrumbs</h3>
+      <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Themes</a></li>
+        <li><a href="#">Horizon</a></li>
+        <li class="active">Showcase</li>
+      </ul>
+
+      <h3 class="mt-4">Pagination</h3>
+      <ul class="pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li><a href="#" class="active">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">&raquo;</a></li>
+      </ul>
+
+      <h3 class="mt-4">Tabs</h3>
+      <div class="tabs">
+        <button class="tab active">Overview</button>
+        <button class="tab">Features</button>
+        <button class="tab">Documentation</button>
+        <button class="tab">Support</button>
+      </div>
+    </section>
+
+    <!-- Modal Trigger -->
+    <section class="showcase-section">
+      <h2>Interactive</h2>
+      <p class="section-intro">Modals and interactive components.</p>
+      <button class="btn btn-coral" onclick="toggleModal()">Open Modal Example</button>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="demoModal">
+    <div class="modal-overlay" onclick="toggleModal()"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Modal Dialog</h3>
+        <button class="modal-close" onclick="toggleModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>This is a clean, accessible modal dialog. It can contain forms, confirmations, or any interactive content you need to present to users.</p>
+        <p>The overlay provides context while the content remains focused and clear.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="toggleModal()">Cancel</button>
+        <button class="btn btn-coral" onclick="toggleModal()">Confirm Action</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="brand-icon">🌅</span>
+          <span>Horizon</span>
+        </div>
+        <p>A warm, professional theme for modern web applications.</p>
+        <div class="footer-links">
+          <a href="#">Documentation</a>
+          <a href="#">GitHub</a>
+          <a href="#">Changelog</a>
+          <a href="#">Support</a>
+        </div>
+        <p class="copyright">&copy; 2026 Horizon Theme. Crafted with care.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
