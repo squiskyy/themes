@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Themes Collection — Beautiful, Production-Ready</title>
+  <style>
+    :root {
+      --bg-dark: #09090b;
+      --bg-card: #18181b;
+      --text: #fafafa;
+      --text- muted: #a1a1aa;
+      --accent: #c9a962;
+      --border: rgba(201, 169, 98, 0.12);
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 246, 0.15), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(236, 72, 153, 0.1), transparent);
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    header { padding: 5rem 0 3rem; text-align: center; }
+    
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -2px;
+      background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+    
+    .subtitle { color: var(--text- muted); font-size: 1.15rem; max-width: 520px; margin: 0 auto; }
+    .count-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(201, 169, 98, 0.1); border: 1px solid var(--border); border-radius: 99px; font-size: 0.85rem; color: var(--accent); margin-top: 1.5rem; }
+    .count-badge span { font-weight: 700; }
+    
+    .themes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.75rem; padding: 2rem 0 4rem; }
+    
+    .theme-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    
+    .theme-card:hover { transform: translateY(-6px) scale(1.01); border-color: var(--accent); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--accent), 0 0 60px rgba(201, 169, 98, 0.1); }
+    .theme-preview { height: 140px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; position: relative; overflow: hidden; }
+    .theme-preview::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.4) 100%); }
+    .preview-icon { position: relative; z-index: 1; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+    .theme-info { padding: 1.5rem; }
+    .theme-info h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .theme-info p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem; }
+    
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.7rem 1.25rem; background: var(--accent); color: var(--bg-dark); text-decoration: none; border-radius: 0.5rem; font-weight: 600; font-size: 0.85rem; transition: all 0.2s; }
+    .btn::after { content: '→'; transition: transform 0.2s; }
+    .theme-card:hover .btn::after { transform: translateX(3px); }
+    
+    footer { padding: 3rem 0; border-top: 1px solid var(--border); text-align: center; }
+    footer p { color: var(--text-muted); font-size: 0.9rem; }
+    
+    .nebula { background: linear-gradient(135deg, #0a0a0f 0%, #6d28d9 100%); }
+    .horizon { background: linear-gradient(135deg, #f5f5f4 0%, #fbbf24 50%, #f97c16 100%); }
+    .atlantis { background: linear-gradient(135deg, #0c1929 0%, #08b2d4 50%, #06b6d4 100%); }
+    .forest { background: linear-gradient(135deg, #14532d 0%, #22c55e 50%, #86efac 100%); }
+    .ember { background: linear-gradient(135deg, #1c0400 0%, #f97316 50%, #fbbf24 100%); }
+    .arctic { background: linear-gradient(135deg, #0c1929 0%, #0ea5e9 50%, #7dd3fc 100%); }
+    .slate { background: linear-gradient(135deg, #09090b 0%, #3f3f46 50%, #71717a 100%); }
+    .sakura { background: linear-gradient(135deg, #fff1f2 0%, #f9a8d4 50%, #ec4899 100%); }
+    .cyber { background: linear-gradient(135deg, #0f0014 0%, #00ff9d 50%, #00ffff 100%); }
+    
+    @media (max-width: 768px) { h1 { font-size: 2.5rem; } .themes-grid { grid-template-columns: 1fr; } .container { padding: 0 1.25rem; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Themes</h1>
+      <p class="subtitle">Nine beautifully crafted, production-ready themes with distinct personalities.</p>
+      <div class="count-badge"><span>9</span> Themes • Ready to Deploy</div>
+    </header>
+    <div class="themes-grid">
+      <a href="horizon/" class="theme-card"><div class="theme-preview horizon"><span class="preview-icon">🌅</span></div><div class="theme-info"><h3>Horizon</h3><p>Warm sunrise-inspired theme for modern web apps.</p><span class="btn">Preview</span></div></a>
+      <a href="atlantis/" class="theme-card"><div class="theme-preview atlantis"><span class="preview-icon">🌊</span></div><div class="theme-info"><h3>Atlantis</h3><p>Deep ocean admin dashboard with glass morphism.</p><span class="btn">Preview</span></div></a>
+      <a href="nebula/" class="theme-card"><div class="theme-preview nebula"><span class="preview-icon">✨</span></div><div class="theme-info"><h3>Nebula</h3><p>Cosmic purple gradients for SaaS products.</p><span class="btn">Preview</span></div></a>
+      <a href="forest/" class="theme-card"><div class="theme-preview forest"><span class="preview-icon">🌿</span></div><div class="theme-info"><h3>Forest</h3><p>Earthy greens for eco-friendly brands.</p><span class="btn">Preview</span></div></a>
+      <a href="ember/" class="theme-card"><div class="theme-preview ember"><span class="preview-icon">🔥</span></div><div class="theme-info"><h3>Ember</h3><p>Bold fiery oranges and reds.</p><span class="btn">Preview</span></div></a>
+      <a href="arctic/" class="theme-card"><div class="theme-preview arctic"><span class="preview-icon">❄️</span></div><div class="theme-info"><h3>Arctic</h3><p>Cool blues and crisp whites.</p><span class="btn">Preview</span></div></a>
+      <a href="slate/" class="theme-card"><div class="theme-preview slate"><span class="preview-icon">◼</span></div><div class="theme-info"><h3>Slate</h3><p>Minimal monochrome elegance.</p><span class="btn">Preview</span></div></a>
+      <a href="sakura/" class="theme-card"><div class="theme-preview sakura"><span class="preview-icon">🌸</span></div><div class="theme-info"><h3>Sakura</h3><p>Soft pink cherry blossom theme.</p><span class="btn">Preview</span></div></a>
+      <a href="cyber/" class="theme-card"><div class="theme-preview cyber"><span class="preview-icon">💾</span></div><div class="theme-info"><h3>Cyber</h3><p>Neon futurism with cyberpunk aesthetics.</p><span class="btn">Preview</span></div></a>
+    </div>
+    <footer><p>Built with care — 9 unique themes, production-ready</p></footer>
+  </div>
+</body>
+</html>

@@ -13,3 +13,4 @@ Copy a theme folder into your static site project, or use as a starting point fo
 ## Contributing
 
 Got a theme you'd like to share? Open a PR!
+
