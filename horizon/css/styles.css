@@ -157,6 +157,48 @@ body {
   flex-wrap: wrap;
 }
 
+/* Hero Trust/Stats Section */
+.hero-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  padding: 1.25rem 2rem;
+  background: var(--white);
+  border-radius: 1rem;
+  border: 1px solid var(--sand);
+  box-shadow: var(--shadow-sm);
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.trust-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--coral);
+  line-height: 1.2;
+}
+
+.trust-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--slate-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.trust-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--sand);
+}
+
 /* Showcase sections with refined styling */
 .showcase-section {
   background: var(--white);
@@ -203,6 +245,17 @@ body {
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.swatch-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .swatch:hover {
@@ -215,6 +268,8 @@ body {
   font-weight: 600;
   color: var(--slate);
   text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  position: relative;
+  z-index: 1;
 }
 
 .swatch code {
@@ -222,6 +277,8 @@ body {
   opacity: 0.75;
   color: var(--slate);
   font-family: 'Monaco', 'Consolas', monospace;
+  position: relative;
+  z-index: 1;
 }
 
 /* Typography refinements */
