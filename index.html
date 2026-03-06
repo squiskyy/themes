@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Themes Collection — Beautiful, Production-Ready</title>
+  <meta name="description" content="Nine beautifully crafted, production-ready themes with distinct personalities. Free and open source.">
   <style>
     :root {
       --bg-dark: #09090b;
@@ -16,6 +17,27 @@
     
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    
+    /* Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -50px;
+      left: 0;
+      background: var(--accent);
+      color: var(--bg-dark);
+      padding: 0.75rem 1.25rem;
+      z-index: 1000;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 0 0 0.5rem 0;
+    }
+    .skip-link:focus { top: 0; }
+    
+    /* Focus States */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
     
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
@@ -37,7 +59,7 @@
     }
     
     .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    header { padding: 5rem 0 3rem; text-align: center; }
+    header { padding: 4rem 0 2.5rem; text-align: center; }
     
     h1 {
       font-size: 3.5rem;
@@ -54,7 +76,11 @@
     .count-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(201, 169, 98, 0.1); border: 1px solid var(--border); border-radius: 99px; font-size: 0.85rem; color: var(--accent); margin-top: 1.5rem; }
     .count-badge span { font-weight: 700; }
     
-    .themes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.75rem; padding: 2rem 0 4rem; }
+    .features { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap; }
+    .feature { display: flex; align-items: center; gap: 0.4rem; color: var(--text-muted); font-size: 0.875rem; }
+    .feature::before { content: '✓'; color: var(--accent); font-weight: 600; }
+    
+    .themes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.75rem; padding: 2.5rem 0 4rem; }
     
     .theme-card {
       background: var(--bg-card);
@@ -65,55 +91,81 @@
       text-decoration: none;
       color: inherit;
       display: block;
+      position: relative;
     }
     
     .theme-card:hover { transform: translateY(-6px) scale(1.01); border-color: var(--accent); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--accent), 0 0 60px rgba(201, 169, 98, 0.1); }
+    .theme-card:focus-within { outline: 2px solid var(--accent); outline-offset: 3px; }
+    
     .theme-preview { height: 140px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; position: relative; overflow: hidden; }
     .theme-preview::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.4) 100%); }
     .preview-icon { position: relative; z-index: 1; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
     .theme-info { padding: 1.5rem; }
-    .theme-info h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.4rem; }
-    .theme-info p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem; }
+    .theme-info h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.4rem; display: flex; align-items: center; justify-content: space-between; }
+    .theme-info p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+    
+    .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .tag { font-size: 0.7rem; padding: 0.25rem 0.6rem; background: rgba(255,255,255,0.05); border-radius: 0.25rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
     
     .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.7rem 1.25rem; background: var(--accent); color: var(--bg-dark); text-decoration: none; border-radius: 0.5rem; font-weight: 600; font-size: 0.85rem; transition: all 0.2s; }
     .btn::after { content: '→'; transition: transform 0.2s; }
     .theme-card:hover .btn::after { transform: translateX(3px); }
     
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); padding: 0.4rem 0.9rem; border-radius: 99px; font-size: 0.8rem; color: #a78bfa; margin-bottom: 1rem; }
+    
     footer { padding: 3rem 0; border-top: 1px solid var(--border); text-align: center; }
     footer p { color: var(--text-muted); font-size: 0.9rem; }
+    footer a { color: var(--accent); }
     
     .nebula { background: linear-gradient(135deg, #0a0a0f 0%, #6d28d9 100%); }
     .horizon { background: linear-gradient(135deg, #f5f5f4 0%, #fbbf24 50%, #f97c16 100%); }
+    .horizon .preview-icon { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
     .atlantis { background: linear-gradient(135deg, #0c1929 0%, #08b2d4 50%, #06b6d4 100%); }
     .forest { background: linear-gradient(135deg, #14532d 0%, #22c55e 50%, #86efac 100%); }
     .ember { background: linear-gradient(135deg, #1c0400 0%, #f97316 50%, #fbbf24 100%); }
     .arctic { background: linear-gradient(135deg, #0c1929 0%, #0ea5e9 50%, #7dd3fc 100%); }
     .slate { background: linear-gradient(135deg, #09090b 0%, #3f3f46 50%, #71717a 100%); }
     .sakura { background: linear-gradient(135deg, #fff1f2 0%, #f9a8d4 50%, #ec4899 100%); }
+    .sakura .preview-icon { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
     .cyber { background: linear-gradient(135deg, #0f0014 0%, #00ff9d 50%, #00ffff 100%); }
     
-    @media (max-width: 768px) { h1 { font-size: 2.5rem; } .themes-grid { grid-template-columns: 1fr; } .container { padding: 0 1.25rem; } }
+    @media (max-width: 768px) { 
+      h1 { font-size: 2.5rem; } 
+      .themes-grid { grid-template-columns: 1fr; } 
+      .container { padding: 0 1.25rem; }
+      header { padding: 3rem 0 2rem; }
+      .features { gap: 1rem; }
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="container" id="main">
     <header>
+      <div class="hero-badge">✨ 9 Beautiful Themes</div>
       <h1>Themes</h1>
       <p class="subtitle">Nine beautifully crafted, production-ready themes with distinct personalities.</p>
       <div class="count-badge"><span>9</span> Themes • Ready to Deploy</div>
     </header>
     <div class="themes-grid">
-      <a href="horizon/" class="theme-card"><div class="theme-preview horizon"><span class="preview-icon">🌅</span></div><div class="theme-info"><h3>Horizon</h3><p>Warm sunrise-inspired theme for modern web apps.</p><span class="btn">Preview</span></div></a>
-      <a href="atlantis/" class="theme-card"><div class="theme-preview atlantis"><span class="preview-icon">🌊</span></div><div class="theme-info"><h3>Atlantis</h3><p>Deep ocean admin dashboard with glass morphism.</p><span class="btn">Preview</span></div></a>
-      <a href="nebula/" class="theme-card"><div class="theme-preview nebula"><span class="preview-icon">✨</span></div><div class="theme-info"><h3>Nebula</h3><p>Cosmic purple gradients for SaaS products.</p><span class="btn">Preview</span></div></a>
-      <a href="forest/" class="theme-card"><div class="theme-preview forest"><span class="preview-icon">🌿</span></div><div class="theme-info"><h3>Forest</h3><p>Earthy greens for eco-friendly brands.</p><span class="btn">Preview</span></div></a>
-      <a href="ember/" class="theme-card"><div class="theme-preview ember"><span class="preview-icon">🔥</span></div><div class="theme-info"><h3>Ember</h3><p>Bold fiery oranges and reds.</p><span class="btn">Preview</span></div></a>
-      <a href="arctic/" class="theme-card"><div class="theme-preview arctic"><span class="preview-icon">❄️</span></div><div class="theme-info"><h3>Arctic</h3><p>Cool blues and crisp whites.</p><span class="btn">Preview</span></div></a>
-      <a href="slate/" class="theme-card"><div class="theme-preview slate"><span class="preview-icon">◼</span></div><div class="theme-info"><h3>Slate</h3><p>Minimal monochrome elegance.</p><span class="btn">Preview</span></div></a>
-      <a href="sakura/" class="theme-card"><div class="theme-preview sakura"><span class="preview-icon">🌸</span></div><div class="theme-info"><h3>Sakura</h3><p>Soft pink cherry blossom theme.</p><span class="btn">Preview</span></div></a>
-      <a href="cyber/" class="theme-card"><div class="theme-preview cyber"><span class="preview-icon">💾</span></div><div class="theme-info"><h3>Cyber</h3><p>Neon futurism with cyberpunk aesthetics.</p><span class="btn">Preview</span></div></a>
+      <a href="horizon/" class="theme-card"><div class="theme-preview horizon"><span class="preview-icon">🌅</span></div><div class="theme-info"><h3>Horizon <span class="tag">Components</span></h3><div class="tags"><span class="tag">Landing</span><span class="tag">Forms</span><span class="tag">Cards</span></div><p>Warm sunrise-inspired theme with 50+ ready components. Perfect for web apps.</p><span class="btn">Preview</span></div></a>
+      <a href="atlantis/" class="theme-card"><div class="theme-preview atlantis"><span class="preview-icon">🌊</span></div><div class="theme-info"><h3>Atlantis <span class="tag">Dashboard</span></h3><div class="tags"><span class="tag">Admin</span><span class="tag">Charts</span><span class="tag">Glass</span></div><p>Deep ocean admin dashboard with glass morphism and data visualizations.</p><span class="btn">Preview</span></div></a>
+      <a href="nebula/" class="theme-card"><div class="theme-preview nebula"><span class="preview-icon">✨</span></div><div class="theme-info"><h3>Nebula <span class="tag">SaaS</span></h3><div class="tags"><span class="tag">Marketing</span><span class="tag">Gradient</span><span class="tag">Hero</span></div><p>Cosmic purple gradients for SaaS products and tech startups.</p><span class="btn">Preview</span></div></a>
+      <a href="forest/" class="theme-card"><div class="theme-preview forest"><span class="preview-icon">🌿</span></div><div class="theme-info"><h3>Forest <span class="tag">Ecommerce</span></h3><div class="tags"><span class="tag">Shop</span><span class="tag">Cart</span><span class="tag">Grid</span></div><p>Earthy greens for eco-friendly brands and sustainable products.</p><span class="btn">Preview</span></div></a>
+      <a href="ember/" class="theme-card"><div class="theme-preview ember"><span class="preview-icon">🔥</span></div><div class="theme-info"><h3>Ember <span class="tag">Landing</span></h3><div class="tags"><span class="tag">Bold</span><span class="tag">CTA</span><span class="tag">Stats</span></div><p>Bold fiery oranges and reds for aggressive call-to-actions.</p><span class="btn">Preview</span></div></a>
+      <a href="arctic/" class="theme-card"><div class="theme-preview arctic"><span class="preview-icon">❄️</span></div><div class="theme-info"><h3>Arctic <span class="tag">SaaS</span></h3><div class="tags"><span class="tag">Clean</span><span class="tag">Trust</span><span class="tag">Minimal</span></div><p>Cool blues and crisp whites. Clean, trustworthy SaaS aesthetic.</p><span class="btn">Preview</span></div></a>
+      <a href="slate/" class="theme-card"><div class="theme-preview slate"><span class="preview-icon">◼</span></div><div class="theme-info"><h3>Slate <span class="tag">Minimal</span></h3><div class="tags"><span class="tag">Monochrome</span><span class="tag">Elegant</span><span class="tag">Blog</span></div><p>Minimal monochrome elegance for blogs and portfolios.</p><span class="btn">Preview</span></div></a>
+      <a href="sakura/" class="theme-card"><div class="theme-preview sakura"><span class="preview-icon">🌸</span></div><div class="theme-info"><h3>Sakura <span class="tag">Ecommerce</span></h3><div class="tags"><span class="tag">Feminine</span><span class="tag">Soft</span><span class="tag">Shop</span></div><p>Soft pink cherry blossom theme for boutiques and lifestyle.</p><span class="btn">Preview</span></div></a>
+      <a href="cyber/" class="theme-card"><div class="theme-preview cyber"><span class="preview-icon">💾</span></div><div class="theme-info"><h3>Cyber <span class="tag">Tech</span></h3><div class="tags"><span class="tag">Neon</span><span class="tag">Future</span><span class="tag">Code</span></div><p>Neon futurism with cyberpunk aesthetics for dev tools.</p><span class="btn">Preview</span></div></a>
     </div>
-    <footer><p>Built with care — 9 unique themes, production-ready</p></footer>
+    <footer><p>Built with care — <a href="https://github.com/squiskyy/themes">Open Source</a> on GitHub</p></footer>
   </div>
 </body>
 </html>
